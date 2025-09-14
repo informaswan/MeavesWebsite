@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/IMG/Books.webp" type="image/x-icon">
+        
+    <title>Portfolio - Maeve Reilly</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ebe7e2;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: #a9a093;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background-color: #6b5e4f;
+            transform: translateY(-2px);
+        }
+
+        .nav-btn.active {
+            background-color: #6b5e4f;
+        }
+
+        .author-name {
+            @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Figtree', sans-serif;
+        }
+
+        /* Page Containers */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+        }
+
+        /* HOME PAGE STYLES */
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            background: linear-gradient(135deg, #8b7d6b 0%, #6b5e4f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            opacity: 0.7;
+            transform: scale(0.85);
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #4a4237;
+        }
+
+        .image-row {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin: 3rem 0;
+        }
+
+        .image-container {
+            flex: 1;
+            max-width: 1000px;
+            min-width: 700px;
+            min-height: 700px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .content-image {
+            width: 800px;
+            height: 700px;
+            aspect-ratio:;
+        }
+
+        /* PORTFOLIO PAGE STYLES */
+        .portfolio-main-content {
+            margin-top: 80px;
+            padding: 2rem 0;
+        }
+
+        /* Section Headings */
+        .portfolio-section-heading {
+            font-size: 2.8rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 3rem 0 2rem 0;
+            color: #6b5e4f;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Content Container */
+        .portfolio-content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Work Item */
+        .portfolio-work-item {
+            display: flex;
+            gap: 3rem;
+            margin: 3rem 0;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-work-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .portfolio-work-item.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .portfolio-work-image {
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .portfolio-work-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .portfolio-work-text {
+            flex: 1;
+            padding: 1rem;
+        }
+
+        .portfolio-work-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #4a4237;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-work-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #5a4f42;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-right {
+                gap: 1rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .image-row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .image-container {
+                max-width: 100%;
+                min-width: auto;
+            }
+
+            .portfolio-section-heading {
+                font-size: 2.2rem;
+            }
+
+            .portfolio-work-item,
+            .portfolio-work-item.reverse {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .portfolio-work-image {
+                max-width: 100%;
+            }
+
+            .portfolio-content-container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="author-name">Maeve Reilly</div>
+        <div class="nav-right">
+            <button class="nav-btn active" id="homeBtn" onclick="showPage('home')">Home</button>
+            <button class="nav-btn" id="portfolioBtn" onclick="showPage('portfolio')">Portfolio</button>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="homePage" class="page active">
+        <div class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <img src="/IMG/InCottage.webp" alt="Creative workspace" class="hero-image">
+                <div class="hero-text">
+                    <h1 class="hero-title">Writer & Wonder</h1>
+                    <p class="hero-subtitle">Welcome readers, writers, friends</p>
+                </div>
+            </section>
+
+            <!-- Content Section 1 -->
+            <section class="content-section">
+                <div class="section-text">
+                    <p>I write poems, essays, and histories. My thoughts often begin with —–....</p>
+                    <br>
+                    <p><em><strong>I wonder if.... I wonder when.... I wonder why....</strong></em></p>
+                    <br>
+                    <p>We live on a beautiful blue planet in a swirling starry galaxy. I can&#39;t get over this. Science has not been able to tell us where we are or why. Even the&#39;when&#39; remains elusive. I guess it&#39;s up to the poets and mystics... </p>
+                    <br>
+                    <p>Inspired by a tree I began writing my first book at age 10, although my writing career was cut short by an over zealous incinerator. Trees remain my inspiration and comfort, and I&#39;ve been wondering if I could learn to talk with thetrees.</p>
+                </div>
+
+                <div class="image-row">
+                    <div class="image-container">
+                        <img src="/IMG/Path.webp" alt="Design process" class="content-image">
+                    </div>
+                    <div class="image-container">
+                        <img src="/IMG/Maeve w tree.webp" alt="Creative tools" class="content-image">
+                    </div>
+                </div>
+
+                <div class="section-text">
+                    <p>I&#39;m Minnesota grown and rooted. But the day came I boarded a plane for
+                        Ireland, and as soon as we landed at Shannon airport I felt more at home than
+                        I&#39;d ever felt in Minnesota. After two weeks walking country lanes I wondered,
+                        could I move to Ireland to write?</p>
+                        <br>
+                        <p>Against the advice of everyone I knew, I quit a good job and sold a beautiful
+                            house to make the move possible. I scrounged work as a freelance writer and
+                            editor to pay the rent on a hundred-year old stone cottage that I&#39;d found online.
+                            It was situated on the hip of a mountain, two miles from the nearest town.</p>
+                            <br>
+                            <p>I moved into that cottage, alone, on Brigid&#39;s Day2005, and in the cold damp
+                            kitchen, I began again to write.</p>
+                </div>
+
+                <div class="image-row">
+                    <div class="image-container">
+                        <img src="/IMG/Cottage.webp" alt="Team collaboration" class="content-image">
+                    </div>
+                    <div class="image-container">
+                        <img src="/IMG/InkandPaper.webp" alt="Final presentation" class="content-image">
+                    </div>
+                </div>
+
+                <div class="section-text">
+                    <p><a href="https://schooloftheunconformed.substack.com/p/irish-time?utm_source=publication-search"><em>The Old Way Home: Memoir of a Backwards Emigration</em></a> is the name of the
+                    book I&#39;ve written about the people and way of life I found in Ireland. After the
+                    final round of editing, I hope to find a publisher so I can share my story with
+                    others who are imagining an alternative to our mechanized uprooted and
+                    decultured world.</p>
+                    <br>
+                     <p><Strong>For others who wonder <em>what if....</em></Strong></p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- PORTFOLIO PAGE -->
+    <div id="portfolioPage" class="page">
+        <div class="portfolio-main-content">
+            <div class="portfolio-content-container">
+                
+                <!-- Essays Section -->
+                <h2 class="portfolio-section-heading">Essays</h2>
+                
+                <div class="portfolio-work-item">
+                    <div class="portfolio-work-image">
+                        <img src="/IMG/ByHand.webp" alt="By Hand Foto" class="portfolio-work-img">
+                    </div>
+                    <div class="portfolio-work-text">
+                        <h3 class="portfolio-work-title"><a href="https://dark-mountain.net/by-hand/">By Hand</a></h3>
+                        <p class="portfolio-work-description">
+                            <br><br>
+                            Dark Mountain, January 2024
+                        </p>
+                    </div>
+                </div>
+
+                <div class="portfolio-work-item reverse">
+                    <div class="portfolio-work-image">
+                        <img src="/IMG/Sea.webp" alt="Philosophy books" class="portfolio-work-img">
+                    </div>
+                    <div class="portfolio-work-text">
+                        <h3 class="portfolio-work-title"><a href="https://dark-mountain.net/sea-sick/">Sea Sick</a></h3>
+                        <p class="portfolio-work-description">
+                            <br><br>
+                            Dark Mountain, March 2025
+                        </p>
+                    </div>
+                </div>
+
+                <div class="portfolio-work-item">
+                    <div class="portfolio-work-image">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=250&fit=crop" alt="Modern society" class="portfolio-work-img">
+                    </div>
+                    <div class="portfolio-work-text">
+                        <h3 class="portfolio-work-title"><a href="https://dark-mountain.net/brink/">Brink</a></h3>
+                        <p class="portfolio-work-description">
+                            <br><br>
+                            Dark Mountain, April 2015
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Poems Section -->
+                <h2 class="portfolio-section-heading">Poems</h2>
+
+                <div class="portfolio-work-item reverse">
+                    <div class="portfolio-work-image">
+                        <img src="/IMG/Tomb.webp" alt="Nature poetry" class="portfolio-work-img">
+                    </div>
+                    <div class="portfolio-work-text">
+                        <h3 class="portfolio-work-title"><a href="https://celticjunction.org/cjac/arts-review/issue-16-lughnasa-2021/distance-in-the-eyes/">Distance in the Eyes of My Great-Grandmother Lizzie</a></h3>
+                        <p class="portfolio-work-description">
+                            <br><br>
+                            Celtic Junction Arts Review, August 2021
+                        </p>
+                    </div>
+                </div>
+
+                <div class="portfolio-work-item">
+                    <div class="portfolio-work-image">
+                        <img src="/IMG/OhamaPic.jpeg" alt="Urban landscape" class="portfolio-work-img">
+                    </div>
+                    <div class="portfolio-work-text">
+                        <h3 class="portfolio-work-title"><a href="https://amethystmagazine.org/2021/08/19/onuma-a-poem-by-maeve-reilly/">Onuma</a></h3>
+                        <p class="portfolio-work-description">
+                            <br><br>
+                            Amethyst Review, August 2021
+                        </p>
+                    </div>
+                </div>
+
+                <div class="portfolio-work-item reverse">
+                    <div class="portfolio-work-image">
+                        <img src="/IMG/SideWalk.webp" alt="Nature poetry" class="portfolio-work-img">
+                    </div>
+                    <div class="portfolio-work-text">
+                        <h3 class="portfolio-work-title">Valentines</h3>
+                        <p class="portfolio-work-description">
+                            <br><br>
+                            engraved in sidewalks in St. Paul, Minnesota, 2010
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Other Works Section -->
+                 
+                <h2 class="portfolio-section-heading">Other Works</h2>
+                <div class="portfolio-work-item">
+                    <p>
+                        Poem &#39;A Question For You&#39;<em>in Broad Wings, Long Legs: A Rookery of Heron Poems,</em>  North Star Press, 2024.
+                        
+                        <br><br>
+                        Poem &#39;Honey&#39;<em>in If Bees Are Few: A Hive of Bee Poems, University of Minnesota </em> Press, 2016
+                        <br><br>
+                        Story, &#39;Awake&#39; <em>in The Shakings of the Bag: New Writing Northwest,</em> 2014.
+                        <br><br>
+                        Essay, &#39;The Dirt Road&#39; in <em>Voices for the Land,</em> Minnesota Historical Society Press, 2003.
+                        </p>
+                 </div>
+      
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageType) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Remove active class from all nav buttons
+            const navBtns = document.querySelectorAll('.nav-btn');
+            navBtns.forEach(btn => btn.classList.remove('active'));
+            
+            // Show the selected page
+            if (pageType === 'home') {
+                document.getElementById('homePage').classList.add('active');
+                document.getElementById('homeBtn').classList.add('active');
+            } else if (pageType === 'portfolio') {
+                document.getElementById('portfolioPage').classList.add('active');
+                document.getElementById('portfolioBtn').classList.add('active');
+            }
+            
+            // Scroll to top when switching pages
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Add smooth scrolling effect
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate elements on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all image containers and work items
+            document.querySelectorAll('.image-container, .portfolio-work-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
