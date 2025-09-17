@@ -78,6 +78,70 @@
             display: block;
         }
 
+        /* Story Page Styles */
+        .story-main-content {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .story-title {
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #6b5e4f;
+            font-family: 'Figtree', sans-serif;
+        }
+
+        .story-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4a4237;
+            text-align: justify;
+        }
+
+        .story-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Back button */
+        .back-btn {
+            background-color: #a9a093;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #6b5e4f;
+            transform: translateY(-2px);
+        }
+
+        /* Link styling for consistency */
+        .incinerator-link, .section-text a {
+            color: #6b5e4f;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .incinerator-link:hover, .section-text a:hover {
+            color: #4a4237;
+        }
+
+        .incinerator-link:visited, .section-text a:visited {
+            color: #8b7d6b;
+        }
+
         /* Main Content */
         .main-content {
             margin-top: 80px;
@@ -208,6 +272,22 @@
             padding: 0 2rem;
         }
 
+        /* Work Item Link Wrapper */
+        .portfolio-work-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-work-link:hover {
+            transform: translateY(-3px);
+        }
+
+        .portfolio-work-link:hover .portfolio-work-item {
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
         /* Work Item */
         .portfolio-work-item {
             display: flex;
@@ -218,11 +298,8 @@
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .portfolio-work-item:hover {
-            transform: translateY(-3px);
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .portfolio-work-item.reverse {
@@ -258,6 +335,16 @@
             font-size: 1.1rem;
             line-height: 1.7;
             color: #5a4f42;
+        }
+
+        /* Non-clickable work item for Other Works section */
+        .portfolio-work-item.no-link {
+            cursor: default;
+        }
+
+        .portfolio-work-item.no-link:hover {
+            transform: none;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
 
         /* Responsive Design */
@@ -317,6 +404,7 @@
         <div class="nav-right">
             <button class="nav-btn active" id="homeBtn" onclick="showPage('home')">Home</button>
             <button class="nav-btn" id="portfolioBtn" onclick="showPage('portfolio')">Portfolio</button>
+            <button class="nav-btn" id="storyBtn" onclick="showPage('story')" style="display: none;">Tree Story</button>
         </div>
     </nav>
 
@@ -341,7 +429,7 @@
                     <br>
                     <p>We live on a beautiful blue planet in a swirling starry galaxy. I can&#39;t get over this. Science has not been able to tell us where we are or why. Even the&#39;when&#39; remains elusive. I guess it&#39;s up to the poets and mystics... </p>
                     <br>
-                    <p>Inspired by a tree I began writing my first book at age 10, although my writing career was cut short by an over zealous incinerator. Trees remain my inspiration and comfort, and I&#39;ve been wondering if I could learn to talk with thetrees.</p>
+                    <p>Inspired by a tree I began writing my first book at age 10, although my writing career was cut short by an over zealous <span class="incinerator-link" onclick="showPage('story')">incinerator</span>. Trees remain my inspiration and comfort, and I&#39;ve been wondering if I could learn to talk with thetrees.</p>
                 </div>
 
                 <div class="image-row">
@@ -398,75 +486,85 @@
                 <!-- Essays Section -->
                 <h2 class="portfolio-section-heading">Essays</h2>
                 
-                <div class="portfolio-work-item">
-                    <div class="portfolio-work-image">
-                        <img src="/IMG/ByHand.webp" alt="By Hand Foto" class="portfolio-work-img">
+                <a href="https://dark-mountain.net/by-hand/" class="portfolio-work-link" target="_blank" rel="noopener noreferrer">
+                    <div class="portfolio-work-item">
+                        <div class="portfolio-work-image">
+                            <img src="/IMG/ByHand.webp" alt="By Hand Foto" class="portfolio-work-img">
+                        </div>
+                        <div class="portfolio-work-text">
+                            <h3 class="portfolio-work-title">By Hand</h3>
+                            <p class="portfolio-work-description">
+                                <br><br>
+                                Dark Mountain, January 2024
+                            </p>
+                        </div>
                     </div>
-                    <div class="portfolio-work-text">
-                        <h3 class="portfolio-work-title"><a href="https://dark-mountain.net/by-hand/">By Hand</a></h3>
-                        <p class="portfolio-work-description">
-                            <br><br>
-                            Dark Mountain, January 2024
-                        </p>
-                    </div>
-                </div>
+                </a>
 
-                <div class="portfolio-work-item reverse">
-                    <div class="portfolio-work-image">
-                        <img src="/IMG/Sea.webp" alt="Philosophy books" class="portfolio-work-img">
+                <a href="https://dark-mountain.net/sea-sick/" class="portfolio-work-link" target="_blank" rel="noopener noreferrer">
+                    <div class="portfolio-work-item reverse">
+                        <div class="portfolio-work-image">
+                            <img src="/IMG/Sea.webp" alt="Philosophy books" class="portfolio-work-img">
+                        </div>
+                        <div class="portfolio-work-text">
+                            <h3 class="portfolio-work-title">Sea Sick</h3>
+                            <p class="portfolio-work-description">
+                                <br><br>
+                                Dark Mountain, March 2025
+                            </p>
+                        </div>
                     </div>
-                    <div class="portfolio-work-text">
-                        <h3 class="portfolio-work-title"><a href="https://dark-mountain.net/sea-sick/">Sea Sick</a></h3>
-                        <p class="portfolio-work-description">
-                            <br><br>
-                            Dark Mountain, March 2025
-                        </p>
-                    </div>
-                </div>
+                </a>
 
-                <div class="portfolio-work-item">
-                    <div class="portfolio-work-image">
-                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=250&fit=crop" alt="Modern society" class="portfolio-work-img">
+                <a href="https://dark-mountain.net/brink/" class="portfolio-work-link" target="_blank" rel="noopener noreferrer">
+                    <div class="portfolio-work-item">
+                        <div class="portfolio-work-image">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=250&fit=crop" alt="Modern society" class="portfolio-work-img">
+                        </div>
+                        <div class="portfolio-work-text">
+                            <h3 class="portfolio-work-title">Brink</h3>
+                            <p class="portfolio-work-description">
+                                <br><br>
+                                Dark Mountain, April 2015
+                            </p>
+                        </div>
                     </div>
-                    <div class="portfolio-work-text">
-                        <h3 class="portfolio-work-title"><a href="https://dark-mountain.net/brink/">Brink</a></h3>
-                        <p class="portfolio-work-description">
-                            <br><br>
-                            Dark Mountain, April 2015
-                        </p>
-                    </div>
-                </div>
+                </a>
 
                 <!-- Poems Section -->
                 <h2 class="portfolio-section-heading">Poems</h2>
 
-                <div class="portfolio-work-item reverse">
-                    <div class="portfolio-work-image">
-                        <img src="/IMG/Tomb.webp" alt="Nature poetry" class="portfolio-work-img">
+                <a href="https://celticjunction.org/cjac/arts-review/issue-16-lughnasa-2021/distance-in-the-eyes/" class="portfolio-work-link" target="_blank" rel="noopener noreferrer">
+                    <div class="portfolio-work-item reverse">
+                        <div class="portfolio-work-image">
+                            <img src="/IMG/Tomb.webp" alt="Nature poetry" class="portfolio-work-img">
+                        </div>
+                        <div class="portfolio-work-text">
+                            <h3 class="portfolio-work-title">Distance in the Eyes of My Great-Grandmother Lizzie</h3>
+                            <p class="portfolio-work-description">
+                                <br><br>
+                                Celtic Junction Arts Review, August 2021
+                            </p>
+                        </div>
                     </div>
-                    <div class="portfolio-work-text">
-                        <h3 class="portfolio-work-title"><a href="https://celticjunction.org/cjac/arts-review/issue-16-lughnasa-2021/distance-in-the-eyes/">Distance in the Eyes of My Great-Grandmother Lizzie</a></h3>
-                        <p class="portfolio-work-description">
-                            <br><br>
-                            Celtic Junction Arts Review, August 2021
-                        </p>
-                    </div>
-                </div>
+                </a>
 
-                <div class="portfolio-work-item">
-                    <div class="portfolio-work-image">
-                        <img src="/IMG/OnumaPic.webp" alt="Urban landscape" class="portfolio-work-img">
+                <a href="https://amethystmagazine.org/2021/08/19/onuma-a-poem-by-maeve-reilly/" class="portfolio-work-link" target="_blank" rel="noopener noreferrer">
+                    <div class="portfolio-work-item">
+                        <div class="portfolio-work-image">
+                            <img src="/IMG/OnumaPic.webp" alt="Urban landscape" class="portfolio-work-img">
+                        </div>
+                        <div class="portfolio-work-text">
+                            <h3 class="portfolio-work-title">Onuma</h3>
+                            <p class="portfolio-work-description">
+                                <br><br>
+                                Amethyst Review, August 2021
+                            </p>
+                        </div>
                     </div>
-                    <div class="portfolio-work-text">
-                        <h3 class="portfolio-work-title"><a href="https://amethystmagazine.org/2021/08/19/onuma-a-poem-by-maeve-reilly/">Onuma</a></h3>
-                        <p class="portfolio-work-description">
-                            <br><br>
-                            Amethyst Review, August 2021
-                        </p>
-                    </div>
-                </div>
+                </a>
 
-                <div class="portfolio-work-item reverse">
+                <div class="portfolio-work-item reverse no-link">
                     <div class="portfolio-work-image">
                         <img src="/IMG/SideWalk.webp" alt="Nature poetry" class="portfolio-work-img">
                     </div>
@@ -482,7 +580,7 @@
                 <!-- Other Works Section -->
                  
                 <h2 class="portfolio-section-heading">Other Works</h2>
-                <div class="portfolio-work-item">
+                <div class="portfolio-work-item no-link">
                     <p>
                         Poem &#39;A Question For You&#39;<em>in Broad Wings, Long Legs: A Rookery of Heron Poems,</em>  North Star Press, 2024.
                         
@@ -496,6 +594,31 @@
                  </div>
       
 
+            </div>
+        </div>
+    </div>
+
+    <!-- TREE STORY PAGE -->
+    <div id="storyPage" class="page">
+        <div class="story-main-content">
+            <button class="back-btn" onclick="showPage('home')">&larr; Back to Home</button>
+            
+            <h1 class="story-title">Tree Story</h1>
+            
+            <div class="story-content">
+                <p>You could say it was a tree that led me to writing. I was ten. My family had just moved to a new house in a new suburb called New Hope, which my mother will soon dub "No Hope". It was the first house in a new development, with no other houses or playmates yet around. For a time, until the next baby was born, I had a room of my own. From my window on the second floor of our white clapboard 'Colonial' I looked out over a flat, treeless yard to fields of tumbled corn beyond. It was the last crop that would ever be harvested in that section of New Hope, soon to be planted with avenues and cul de sacs of homes for newly-minted middle-class families like ours.</p>
+
+                <p>The literary events in memory that year were the visit by the encyclopedia salesman and a special assembly in the school gymnasium to hear the white-shocked Carl Sandburg thump against our somnolence with his startling gravelled diction. The occasion was the dedication of our new Carl Sandburg Junior High School. Although I was book prone, like my mother, it hadn't occurred to me that you could chose to be a writer. Anyway, I was set to be a ballet dancer and longing for my first pair of toe shoes.</p>
+
+                <p>Then came the tree—in a powerful technicolor dream complete with surround sound and thrilling plot. The tree was thick-stalked and burled, with fissured bark and a lush canopy. A hobbit-size door led me inside the tree, down a flight of tiny stairs, and into a story far from the order of the world I lived in. My ears were still ringing when I woke up, and the pale blue walls of my room seemed slightly tilted. An oneiric spell was on me, and I didn't want to let it go. Still in my pajamas, I went straight to the card table under the window, where I usually did my homework, and started to write.</p>
+
+                <p>By the time my mother broke through the dream state to insist I come down for breakfast, my fevered pencil script covered a tablets-worth of three-line school paper. And I was no where near finished—I had already decided my story was big enough for a book. After breakfast were chores, and after that, well, I don't remember. Eventually I got back to my table and picked up my pencil. But the messy pile of pages—my book to be—was gone. I looked all around my room. My mother had cleaned, that was obvious, as she had threatened to do if I didn't clean up myself. She said she threw all those old papers in the incinerator. And yes, she had burned them, and no, it was too late.</p>
+
+                <p>I went back to my room. I would have to start over. I picked up my pencil, but no words came. I'd lost my story. I could not get back to the magic world inside the tree.</p>
+
+                <p>Although it took years for me to accept that my instrument for facing life was a pencil or a pen and not the ballet barre, the tree never left me. I can still feel the force of its sheltering essence. I can still feel its pull to another world. That tree planted itself when I first tried to write its story. That tree, rooted and solid, with its door to our human past in the natural world, where trees were once gods and alphabets, remains my muse. Always with me, yet always elusive, like a dream.</p>
+
+                <p>This experience taught me early that you need to be at your desk, chores or no chores, or you'll lose your story. It also taught me to hide my first drafts, but I still prefer to write in my pajamas.</p>
             </div>
         </div>
     </div>
@@ -514,9 +637,15 @@
             if (pageType === 'home') {
                 document.getElementById('homePage').classList.add('active');
                 document.getElementById('homeBtn').classList.add('active');
+                document.getElementById('storyBtn').style.display = 'none';
             } else if (pageType === 'portfolio') {
                 document.getElementById('portfolioPage').classList.add('active');
                 document.getElementById('portfolioBtn').classList.add('active');
+                document.getElementById('storyBtn').style.display = 'none';
+            } else if (pageType === 'story') {
+                document.getElementById('storyPage').classList.add('active');
+                document.getElementById('storyBtn').classList.add('active');
+                document.getElementById('storyBtn').style.display = 'block';
             }
             
             // Scroll to top when switching pages
