@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Prefer 'Naueve Std' if available, fall back to system fonts */
+@font-face {
+    font-family: 'Naueve Std';
+    src: local('Naueve Std'), local('NaueveStd');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Naueve Std', 'Arial', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background-color: #ebe7e2;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+    background-color: #a9a093;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-right {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #6b5e4f;
+    transform: translateY(-2px);
+}
+
+.nav-btn.active {
+    background-color: #6b5e4f;
+}
+
+.author-name {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: 'Figtree', sans-serif;
+}
+
+/* Page Containers */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Story Page Styles */
+.story-main-content {
+    margin-top: 80px;
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.story-hero-image {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 2rem auto 3rem auto;
+    display: block;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.story-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #6b5e4f;
+    font-family: 'Playfair', sans-serif;
+}
+
+.story-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a4237;
+    text-align: justify;
+}
+
+.story-content p {
+    margin-bottom: 1.5rem;
+}
+
+/* Back button */
+.back-btn {
+    background-color: #a9a093;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #6b5e4f;
+    transform: translateY(-2px);
+}
+
+/* Link styling for consistency */
+.incinerator-link, .section-text a {
+    color: #6b5e4f;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.incinerator-link:hover, .section-text a:hover {
+    color: #4a4237;
+}
+
+.incinerator-link:visited, .section-text a:visited {
+    color: #8b7d6b;
+}
+
+/* Main Content */
+.main-content {
+    margin-top: 80px;
+}
+
+/* HOME PAGE STYLES */
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 70vh;
+    background: linear-gradient(135deg, #8b7d6b 0%, #6b5e4f 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.7;
+    transform: scaleX(.90);
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Content Sections */
+.content-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #4a4237;
+}
+
+.image-row {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.image-container {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: auto;
+    object-fit:cover;
+}
+
+.image-container:hover {
+    transform: translateY(-5px);
+}
+
+.content-image {
+width: 400px;
+height: auto;
+aspect-ratio:4/3;
+}
+
+/* PORTFOLIO PAGE STYLES */
+.portfolio-main-content {
+    margin-top: 80px;
+    padding: 2rem 0;
+}
+
+/* Section Headings */
+.portfolio-section-heading {
+    font-size: 2.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 3rem 0 2rem 0;
+    color: #6b5e4f;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Content Container */
+.portfolio-content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Work Item Link Wrapper */
+.portfolio-work-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.portfolio-work-link:hover {
+    transform: translateY(-3px);
+}
+
+.portfolio-work-link:hover .portfolio-work-item {
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+/* Work Item */
+.portfolio-work-item {
+    display: flex;
+    gap: 3rem;
+    margin: 3rem 0;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.portfolio-work-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.portfolio-work-image {
+    flex: 1;
+    max-width: 400px;
+}
+
+.portfolio-work-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.portfolio-work-text {
+    flex: 1;
+    padding: 1rem;
+}
+
+.portfolio-work-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #4a4237;
+    margin-bottom: 1rem;
+}
+
+.portfolio-work-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #5a4f42;
+}
+
+/* Non-clickable work item for Other Works section */
+.portfolio-work-item.no-link {
+    cursor: default;
+}
+
+.portfolio-work-item.no-link:hover {
+    transform: none;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-right {
+        gap: 1rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .image-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container {
+        max-width: 100%;
+        min-width: auto;
+    }
+
+    .portfolio-section-heading {
+        font-size: 2.2rem;
+    }
+
+    .portfolio-work-item,
+    .portfolio-work-item.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .portfolio-work-image {
+        max-width: 100%;
+    }
+
+    .portfolio-content-container {
+        padding: 0 1rem;
+    }
+}
+
+    /* Gallery styles */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.25rem;
+        max-width: 1100px;
+        margin: 2rem auto 4rem auto;
+    }
+
+    .gallery-item {
+        background: #fff;
+        padding: 0.5rem;
+        border-radius: 8px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        text-align: center;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    .gallery-item figcaption {
+        margin-top: 0.5rem;
+        font-size: 0.95rem;
+        color: #5a4f42;
+    }
+
+    /* Contact form styles */
+    .contact-form {
+        max-width: 700px;
+        margin: 1rem auto 4rem auto;
+        background: #fff;
+        padding: 1.25rem;
+        border-radius: 8px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    }
+
+    .form-group {
+        margin-bottom: 0.9rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group label {
+        margin-bottom: 0.3rem;
+        font-weight: 600;
+        color: #4a4237;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 0.6rem;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+        font-size: 1rem;
+    }
+
+    .form-actions {
+        margin-top: 0.75rem;
+        text-align: right;
+        /* ensure the submit button is always visible: make the actions sticky at the bottom of the viewport when on contact page */
+    }
+
+    /* Sticky submit: applied when contact form is visible */
+    .contact-form {
+        position: relative;
+        padding-bottom: 4.5rem; /* space for the sticky bar */
+    }
+
+    .contact-form .form-actions {
+        position: sticky;
+        bottom: 1rem;
+        background: transparent;
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 0.25rem;
+    }
+
+    .contact-form .form-actions .nav-btn {
+        padding: 0.65rem 1rem;
+    }
+
+/* Nav social icon button */
+.nav-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.08);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav-social:hover {
+    background: rgba(255,255,255,0.16);
+    transform: translateY(-2px);
+}
+
