@@ -40,7 +40,7 @@ body {
 }
 
 .nav-btn {
-    background: none;
+    background-color: #6b5e4f;
     border: none;
     color: white;
     font-size: 1.1rem;
@@ -65,7 +65,7 @@ body {
     font-size: 2rem;
     font-weight: bold;
     letter-spacing: 1px;
-    font-family: 'Figtree', sans-serif;
+    font-family: 'work', sans-serif;
 }
 
 /* Page Containers */
@@ -496,10 +496,9 @@ aspect-ratio:4/3;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 999px;
-    background: rgba(255,255,255,0.08);
     color: white;
     text-decoration: none;
     font-weight: 700;
@@ -508,5 +507,14 @@ aspect-ratio:4/3;
 .nav-social:hover {
     background: rgba(255,255,255,0.16);
     transform: translateY(-2px);
+}
+
+/* Size the twitter icon image inside the nav-social link */
+.nav-social img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    box-sizing: border-box;
 }
 
