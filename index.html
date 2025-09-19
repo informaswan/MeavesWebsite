@@ -7,7 +7,7 @@
         
     <title>Portfolio - Maeve Reilly</title>
     <style>
-         @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+         @import url('https://fonts.googleapis.com/css2?family=Playfair:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
         * {
             margin: 0;
             padding: 0;
@@ -104,7 +104,7 @@
             text-align: center;
             margin-bottom: 3rem;
             color: #6b5e4f;
-            font-family: 'Figtree', sans-serif;
+            font-family: 'Playfair', sans-serif;
         }
 
         .story-content {
@@ -173,7 +173,7 @@
         .hero-image {
             width: 100%;
             height: 100%;
-            object-fit:contain;
+            object-fit:cover;
             position: absolute;
             top: 0;
             left: 0;
@@ -244,6 +244,9 @@
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             transition: transform 0.3s ease;
+            width: 100%;
+            height: auto;
+            object-fit:cover;
         }
 
         .image-container:hover {
@@ -251,7 +254,7 @@
         }
 
         .content-image {
-        width: 100%;
+        width: 400px;
         height: auto;
         aspect-ratio:4/3;
         }
@@ -422,7 +425,7 @@
         <div class="main-content">
             <!-- Hero Section -->
             <section class="hero-section">
-                <img src="IMG/inCottage.webp" alt="Creative workspace" class="hero-image">
+                <img src="IMG/FotoOfMaeve.webp" alt="Creative workspace" class="hero-image">
                 <div class="hero-text">
                     <h1 class="hero-title">Writer & Wonderer</h1>
                 </div>
@@ -440,19 +443,8 @@
                     <p>We live on a beautiful blue planet in a swirling starry galaxy. I can&#39;t get over this. Science has not been able to tell us where we are or why. Even the&#39;when&#39; remains elusive. I guess it&#39;s up to the poets and mystics... </p>
                     <br>
                     <p>Inspired by a tree I began writing my first book at age 10, although my writing career was cut short by an over zealous <span class="incinerator-link" onclick="showPage('story')">incinerator</span>. Trees remain my inspiration and comfort, and I&#39;ve been wondering if I could learn to talk with thetrees.</p>
-                </div>
 
-                <div class="image-row">
-                    <div class="image-container">
-                        <img src="IMG/Path.webp" alt="Design process" class="content-image">
-                    </div>
-                    <div class="image-container">
-                        <img src="IMG/MaeveWithStick.webp" alt="Creative tools" class="content-image">
-                    </div>
-                </div>
-
-                <div class="section-text">
-                    <p>I&#39;m Minnesota grown and rooted. But the day came I boarded a plane for
+                        <p>I&#39;m Minnesota grown and rooted. But the day came I boarded a plane for
                         Ireland, and as soon as we landed at Shannon airport I felt more at home than
                         I&#39;d ever felt in Minnesota. After two weeks walking country lanes I wondered,
                         could I move to Ireland to write?</p>
@@ -464,23 +456,12 @@
                             <br>
                             <p>I moved into that cottage, alone, on Brigid&#39;s Day2005, and in the cold damp
                             kitchen, I began again to write.</p>
-                </div>
 
-                <div class="image-row">
-                    <div class="image-container">
-                        <img src="IMG/Cottage.webp" alt="Team collaboration" class="content-image">
-                    </div>
-                    <div class="image-container">
-                        <img src="IMG/InkandPaper.webp" alt="Final presentation" class="content-image">
-                    </div>
-                </div>
-
-                <div class="section-text">
-                    <p><span class="incinerator-link" onclick="showPage('beauty')"><em>The Old Way Home: Memoir of a Backwards Emigration</em></span> is the name of the
-                    book I&#39;ve written about the people and way of life I found in Ireland. After the
-                    final round of editing, I hope to find a publisher so I can share my story with
-                    others who are imagining an alternative to our mechanized uprooted and
-                    decultured world.</p>
+                            <p><span class="incinerator-link" onclick="showPage('beauty')"><em>The Old Way Home: Memoir of a Backwards Emigration</em></span> is the name of the
+                            book I&#39;ve written about the people and way of life I found in Ireland. After the
+                             final round of editing, I hope to find a publisher so I can share my story with
+                            others who are imagining an alternative to our mechanized uprooted and
+                            decultured world.</p>
                     <br>
                      <p><Strong>For others who wonder <em>what if....</em></Strong></p>
                 </div>
