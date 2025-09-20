@@ -23,6 +23,7 @@
             </a>
             <button class="nav-btn" id="storyBtn" onclick="showPage('story')" style="display: none;">Tree Story</button>
             <button class="nav-btn" id="beautyBtn" onclick="showPage('beauty')" style="display: none;">Beauty</button>
+            <button class="nav-btn" id="SpellcheckBtn" onclick="showPage('spellcheck')" style="display: none;">Spellcheck</button>
         </div>
     </nav>
 
@@ -46,7 +47,7 @@
                     <br>
                     <p><em><strong>I wonder if.... I wonder when.... I wonder why....</strong></em></p>
                     <br>
-                    <p>We live on a beautiful blue planet in a swirling starry galaxy. I can&#39;t get over this. Science has not been able to tell us where we are or why. Even the&#39;when&#39; remains elusive. I guess it&#39;s up to the poets and mystics... </p>
+                    <p>We live on a beautiful blue planet in a swirling starry galaxy. I can&#39;t get over this. Science has not been able to tell us where we are or why. Even the&#39; when&#39; remains elusive. I guess it&#39;s up to the poets and mystics... </p>
                     <br>
                     <p>Inspired by a tree I began writing my first book at age 10, although my writing career was cut short by an over zealous <span class="incinerator-link" onclick="showPage('story')">incinerator</span>. Trees remain my inspiration and comfort, and I&#39;ve been wondering if I could learn to talk with thetrees.</p>
 
@@ -346,31 +347,33 @@
     <div id="spellcheckPage" class="page">
         <div class="story-main-content">
             <button class="back-btn" onclick="showPage('portfolio')">&larr; Back to Portfolio</button>
-            <h1 class="story-title">Sample Story: SpellCheck</h1>
+            <img src="IMG/Tears of God.webp" alt="Image from book" class="story-hero-image">
+            <h1 class="story-title">SpellCheck</h1>
             <div class="story-content">
-                <p>Spellcheck
-                    Why does my American spellcheck always want to change emigrant to immigrant? Is it
+                <p>
+                    <br>
+                    Why does my American spellcheck always want to change <em>emigrant</em> to <em>immigrant</em>? Is it
                     because emigrants are leavers and immigrants arrivers? Emigrants, poor, ragged, sick for
                     home. Immigrants sturdy, eager, westward ho?
-
+                    <br><br>
                     It’s natural, I suppose, that spellcheck would have an American bias built into it–that it
                     would skip the leaving part (the past) and cut straight to the arriving part (the future). To
                     skip the leaving part is to skip the trauma of dislocation from the place and people left
                     behind.
-
-                    When the Irish emigrated the word used for the people leaving was deorai, meaning exile,
-                    the root–deora–meaning tears.
-
+                    <br><br>
+                    When the Irish emigrated the word used for the people leaving was <em>deorai</em>, meaning <em>exile</em>,
+                    the root–<em>deora</em>–meaning <em>tears</em>.
+                    <br><br>
                     When I first came to Ireland I was delighted by the profusion of fuchsia in the hedges.
                     All summer long and into the fall the fuchsia are there, their pink-violety bell flowers
                     with the royal purple ringers bending their sweet music over the lanes. And I knew,
                     because I’d read it in a book by Edna O’Brien, that the name for fuchsia in the west of
-                    Ireland is deora dé, tears of God. And I’ve always wondered why the Irish called them
-                    that, deora dé, tears of God, and thought the fuchsia in Ireland must be a bittersweet
+                    Ireland is <em>deora dé</em>, tears of God. And I’ve always wondered why the Irish called them
+                    that, <em>deora dé</em>, tears of God, and thought the fuchsia in Ireland must be a bittersweet
                     beauty. And an emigrant beauty, the fuchsia itself having been transplanted all the way
                     from its native home in Tierra del Fuego.
-
-                    Now, thanks to spellcheck, I can also wonder if the fuchsia, the deora dé, bloom in such
+                    <br><br>
+                    Now, thanks to spellcheck, I can also wonder if the fuchsia, the <em>deora dé</em>, bloom in such
                     profusion, in such millions of tears, in the name of the emigrants. Are these throngs of
                     tender hanging flowers the tears of the exiles who longed to come home? Have they
                     come home now? Does each pink bell ring a name?</p>
@@ -395,11 +398,13 @@
                 document.getElementById('homeBtn').classList.add('active');
                 document.getElementById('storyBtn').style.display = 'none';
                 document.getElementById('beautyBtn').style.display = 'none';
+                document.getElementById('SpellcheckBtn').style.display = 'none';
             } else if (pageType === 'portfolio') {
                 document.getElementById('portfolioPage').classList.add('active');
                 document.getElementById('portfolioBtn').classList.add('active');
                 document.getElementById('storyBtn').style.display = 'none';
                 document.getElementById('beautyBtn').style.display = 'none';
+                document.getElementById('SpellcheckBtn').style.display = 'none';
             } else if (pageType === 'gallery') {
                 document.getElementById('galleryPage').classList.add('active');
                 document.getElementById('galleryBtn').classList.add('active');
@@ -411,11 +416,20 @@
                 document.getElementById('storyBtn').classList.add('active');
                 document.getElementById('storyBtn').style.display = 'block';
                 document.getElementById('beautyBtn').style.display = 'none';
+                document.getElementById('SpellcheckBtn').style.display = 'none';
             } else if (pageType === 'beauty') {
                 document.getElementById('beautyPage').classList.add('active');
                 document.getElementById('beautyBtn').classList.add('active');
                 document.getElementById('beautyBtn').style.display = 'block';
                 document.getElementById('storyBtn').style.display = 'none';
+                document.getElementById('SpellcheckBtn').style.display = 'none';
+
+                } else if (pageType === 'spellcheck') {
+                document.getElementById('spellcheckPage').classList.add('active');
+                document.getElementById('SpellcheckBtn').classList.add('active');
+                document.getElementById('SpellcheckBtn').style.display = 'block';
+                document.getElementById('storyBtn').style.display = 'none';
+                document.getElementById('beautyBtn').style.display = 'none';
             }
             
             // Scroll to top when switching pages
