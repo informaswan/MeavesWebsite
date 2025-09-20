@@ -23,6 +23,7 @@
             </a>
             <button class="nav-btn" id="storyBtn" onclick="showPage('story')" style="display: none;">Tree Story</button>
             <button class="nav-btn" id="beautyBtn" onclick="showPage('beauty')" style="display: none;">Beauty</button>
+            <button class="nav-btn" id="SpellcheckBtn" onclick="showPage('spellcheck')" style="display: none;">Spellcheck</button>
         </div>
     </nav>
 
@@ -387,11 +388,13 @@
                 document.getElementById('homeBtn').classList.add('active');
                 document.getElementById('storyBtn').style.display = 'none';
                 document.getElementById('beautyBtn').style.display = 'none';
+                document.getElementById('SpellcheckBtn').style.display = 'none';
             } else if (pageType === 'portfolio') {
                 document.getElementById('portfolioPage').classList.add('active');
                 document.getElementById('portfolioBtn').classList.add('active');
                 document.getElementById('storyBtn').style.display = 'none';
                 document.getElementById('beautyBtn').style.display = 'none';
+                document.getElementById('SpellcheckBtn').style.display = 'none';
             } else if (pageType === 'gallery') {
                 document.getElementById('galleryPage').classList.add('active');
                 document.getElementById('galleryBtn').classList.add('active');
@@ -403,11 +406,20 @@
                 document.getElementById('storyBtn').classList.add('active');
                 document.getElementById('storyBtn').style.display = 'block';
                 document.getElementById('beautyBtn').style.display = 'none';
+                document.getElementById('SpellcheckBtn').style.display = 'none';
             } else if (pageType === 'beauty') {
                 document.getElementById('beautyPage').classList.add('active');
                 document.getElementById('beautyBtn').classList.add('active');
                 document.getElementById('beautyBtn').style.display = 'block';
                 document.getElementById('storyBtn').style.display = 'none';
+                document.getElementById('SpellcheckBtn').style.display = 'none';
+
+                } else if (pageType === 'spellcheck') {
+                document.getElementById('beautyPage').classList.add('active');
+                document.getElementById('beautyBtn').classList.add('active');
+                document.getElementById('beautyBtn').style.display = 'none';
+                document.getElementById('storyBtn').style.display = 'none';
+                document.getElementById('SpellcheckBtn').style.display = 'block';
             }
             
             // Scroll to top when switching pages
