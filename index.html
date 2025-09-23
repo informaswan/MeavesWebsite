@@ -56,7 +56,7 @@
                     Star Press). Her poem &#39;Valentines&#39; was selected to be imprinted in the sidewalks of St. Paul.
                     <br><br>
                     Inspired by a magical tree she began to write her first book at age 10, although her early writing
-                    career was cut short by an overzealous incinerator operator. (Read story<span class="incinerator-link" onclick="showPage('story')"> here</span>) Now, at last, in
+                    career was cut short by an overzealous incinerator operator. (Read story <span class="incinerator-link" onclick="showPage('story')">here</span>) Now, at last, in
                     2025, she has safely completed her first book after many years in the making. <em>The Old Way
                     </em> is a lyrical memoir of her &#39;backwards&#39; emigration to a remote mountain townland in
                     County Leitrim, Ireland.
@@ -71,7 +71,7 @@
                     ancestors from Leitrim to Minnesota, discovering the dislocations and dispossessions hidden
                     and effaced by public fables about immigration and pioneer settlement.
                     <br><br>
-                    (Read excerpts from <em>The Old Way Home here.</em>)
+                    (Read excerpts from <em>The Old Way Home here </em><!-- <span class="incinerator-link" onclick="showPage('story')">here</span></em>) -->
                     <br><br>
                     Maeve Reilly has been an activist, speech writer, and historic preservationist. She has studied
                     with authors and poets including Paul Kingsnorth, Dermot Healy, Carol Bly, and Bill Holm. Many
@@ -327,7 +327,7 @@
         <div class="story-main-content">
             <button class="back-btn" onclick="showPage('home')">&larr; Back to Home</button>
             
-            <img src="IMG/Maeve w tree.webp" alt="Image from book" class="story-hero-image">
+            <img src="IMG/Cottage.webp" alt="Image from book" class="story-hero-image">
             <h1 class="story-title">Tree Story</h1>
             
             <div class="story-content">
@@ -443,7 +443,7 @@
         
 
          // Handle contact form submit with EmailJS
-        function handleContactSubmit(e) {
+         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const submitBtn = document.getElementById('submit-btn');
@@ -477,11 +477,14 @@
                 })
                 .finally(function() {
                     // Reset button state
+                    document.getElementById('contactForm').reset();
                     btnText.style.display = 'inline';
                     btnLoading.style.display = 'none';
                     submitBtn.disabled = false;
+                    
                 });
-        }
+         })
+        
 
         // Add smooth scrolling effect and small reveal animation
         document.addEventListener('DOMContentLoaded', function() {

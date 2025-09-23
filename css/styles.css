@@ -86,7 +86,9 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
-
+.story-main-content img {
+    object-fit: fill;
+}
 .story-hero-image {
     width: 100%;
     max-width: 600px;
