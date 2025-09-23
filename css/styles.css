@@ -91,7 +91,7 @@ body {
     width: 100%;
     max-width: 600px;
     height: 300px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 10px;
     margin: 2rem auto 3rem auto;
     display: block;
@@ -230,6 +230,18 @@ body {
     text-align: center;
     margin-bottom: 3rem;
     color: #4a4237;
+}
+
+/* Home page: make the main intro paragraph justify left and right edges */
+#homePage .section-text {
+    text-align: justify;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-justify: inter-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
 }
 
 .image-row {
