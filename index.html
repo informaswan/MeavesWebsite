@@ -71,7 +71,7 @@
                     ancestors from Leitrim to Minnesota, discovering the dislocations and dispossessions hidden
                     and effaced by public fables about immigration and pioneer settlement.
                     <br><br>
-                    (Read excerpts from <em>The Old Way Home here </em>)<!-- <span class="incinerator-link" onclick="showPage('story')">here</span></em>) -->
+                    (Read excerpts from <em>The Old Way Home</em> <span class="incinerator-link" onclick="showPage('beauty')">here</span>)
                     <br><br>
                     Maeve Reilly has been an activist, speech writer, and historic preservationist. She has studied
                     with authors and poets including Paul Kingsnorth, Dermot Healy, Carol Bly, and Bill Holm. Many
@@ -278,7 +278,7 @@
         <div class="story-main-content">
             <button class="back-btn" onclick="showPage('home')">&larr; Back to Home</button>
               
-            <!-- Placeholder image - replace with your own -->
+        
             <img src="IMG/Cottage.webp" alt="Image from book" class="story-hero-image">
             
             <h1 class="story-title">Áilleacht – Beauty</h1>
@@ -327,7 +327,7 @@
         <div class="story-main-content">
             <button class="back-btn" onclick="showPage('home')">&larr; Back to Home</button>
             
-            <img src="IMG/Cottage.webp" alt="Image from book" class="story-hero-image">
+            <img src="IMG/Maeve w tree.webp" alt="Image from book" class="story-hero-image">
             <h1 class="story-title">Tree Story</h1>
             
             <div class="story-content">
@@ -419,20 +419,20 @@
             } else if (pageType === 'story') {
                 document.getElementById('storyPage').classList.add('active');
                 document.getElementById('storyBtn').classList.add('active');
-                document.getElementById('storyBtn').style.display = 'block';
+                document.getElementById('storyBtn').style.display = 'none';
                 document.getElementById('beautyBtn').style.display = 'none';
                 document.getElementById('SpellcheckBtn').style.display = 'none';
             } else if (pageType === 'beauty') {
                 document.getElementById('beautyPage').classList.add('active');
                 document.getElementById('beautyBtn').classList.add('active');
-                document.getElementById('beautyBtn').style.display = 'block';
+                document.getElementById('beautyBtn').style.display = 'none';
                 document.getElementById('storyBtn').style.display = 'none';
                 document.getElementById('SpellcheckBtn').style.display = 'none';
 
                 } else if (pageType === 'spellcheck') {
                 document.getElementById('spellcheckPage').classList.add('active');
                 document.getElementById('SpellcheckBtn').classList.add('active');
-                document.getElementById('SpellcheckBtn').style.display = 'block';
+                document.getElementById('SpellcheckBtn').style.display = 'none';
                 document.getElementById('storyBtn').style.display = 'none';
                 document.getElementById('beautyBtn').style.display = 'none';
             }
