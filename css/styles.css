@@ -53,9 +53,10 @@ body {
 .nav-btn {
     background-color: transparent;
     border: none;
-    color: #000000;
-    font-size: 1.1rem;
-    font-weight: 600;
+    color: #222222;
+    font-size: 1.05rem;
+    font-weight: 400;
+    font-family: 'NeueStd', sans-serif;
     cursor: pointer;
     padding: 0.5rem 1rem;
     border-radius: 25px;
@@ -77,6 +78,12 @@ body {
     font-weight: bold;
     letter-spacing: 1px;
     font-family: 'NeueStd', sans-serif;
+}
+
+.author-like {
+    font-family: 'NeueStd', sans-serif;
+    color: #000000;
+    font-weight: 400;
 }
 
 /* Page Containers */
