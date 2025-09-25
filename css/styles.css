@@ -88,6 +88,8 @@ body {
     font-family: 'NeueStd', sans-serif;
     color: var(--text-main);
     font-weight: 400;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 /* Make all headings use the same main text color */
@@ -131,18 +133,35 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: auto;
 }
 .story-main-content img {
-    object-fit: fill;
+    /* ensure contained images keep their natural proportions unless specifically styled */
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
 }
+
 .story-hero-image {
+    /* Responsive, locked aspect ratio for hero images */
+    max-width: 480px;
     width: 100%;
-    width: 480px;
-    height: 490px;
-    aspect-ratio: 4/3;
-    object-fit: fit;
+    aspect-ratio: 4 / 3;
+    height: auto;
+    object-fit: cover; /* fill the box while preserving aspect ratio */
     border-radius: 10px;
     margin: 2rem auto 3rem auto;
     display: block;
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Modifier: smaller hero image for spellcheck page */
+.story-hero-image--small {
+    max-width: 360px; /* twice the previous small size */
+    width: 360px; /* twice as big as before */
+    aspect-ratio: 4 / 3;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain; /* show whole image without cropping */
 }
 
 .story-title {
