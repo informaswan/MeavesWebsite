@@ -111,11 +111,15 @@ h1, h2, h3, h4, h5, h6 {
     height: 130%;
     background-image: 
         url("/IMG/vecteezy_beautiful-watercolor-floral-leaves-background_18752535.jpg");
-    background-size: 100% 100%;
+    /* make the leaves more subtle: cover, centered, and toned down */
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1;
-    opacity: 65%;
+    /* reduced opacity + subtle desaturate/brightness to push leaves to the background */
+    opacity: 0.18;
+    filter: grayscale(25%) brightness(0.98) contrast(0.9) saturate(0.6);
+    pointer-events: none;
 }
 
 /* Story Page Styles */
