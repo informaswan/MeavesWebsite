@@ -475,27 +475,6 @@ aspect-ratio:4/3;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
-/* Centered overlay heading for the 'Soon to be more' block */
-.portfolio-work-item.no-link {
-    /* ensure vertical flow: heading above paragraph (not side-by-side) */
-    display: block; /* override parent .portfolio-work-item flex layout */
-    position: static;
-    padding: 1.25rem 1rem;
-}
-
-.portfolio-work-item.no-link h2 {
-    margin: 0 0 1rem 0;
-    text-align: center;
-    color: var(--text-main);
-    font-size: 1.6rem;
-    font-weight: 600;
-}
-
-.portfolio-work-item.no-link .portfolio-work-description,
-.portfolio-work-item.no-link p {
-    opacity: 1;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar {
