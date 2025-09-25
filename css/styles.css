@@ -101,6 +101,19 @@ h1, h2, h3, h4, h5, h6 {
 .page.active {
     display: block;
 }
+.page::before {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 130%;
+    background-image: 
+        url("/IMG/vecteezy_beautiful-watercolor-floral-leaves-background_18752535.jpg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 65%;
+}
 
 /* Story Page Styles */
 .story-main-content {
@@ -202,33 +215,34 @@ h1, h2, h3, h4, h5, h6 {
 .main-content {
     margin-top: 80px;
 }
-
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      url(IMG/vecteezy_beautiful-watercolor-floral-leaves-background_18752535);
+    background-size: 200px 200px, 150px 150px, 100px 100px, cover;
+    background-position: 0 0, 100px 100px, 200px 50px, center;
+    background-repeat: repeat, repeat, repeat, no-repeat;
+    pointer-events: none;
+    z-index: 1;
+}
 /* HOME PAGE STYLES */
 /* Hero Section */
 .hero-section {
     position: relative;
-    height: 70vh;
+    height: 85vh;
     background: linear-gradient(135deg, var(--hero-light-blue) 0%, var(--nav-light-blue) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
+    background-image: url(/IMG/inCottage.webp);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-
-.hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    opacity: 1;
-    transform: none;
-    filter: brightness(1.14) contrast(1.06) saturate(1.06);
-    transition: filter 0.25s ease, opacity 0.25s ease;
-}
+/* Ensure hero text is above the leaf overlay */
 
 .hero-text {
     position: relative;
@@ -236,7 +250,9 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     color: var(--btn-blue);
     padding: 2rem;
+    z-index: 2;
 }
+
 
 .hero-title {
     font-size: 4.5rem;
@@ -278,7 +294,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.8;
     text-align: center;
     margin-bottom: 3rem;
-    color: #4a4237;
+    color: #000000;
 }
 
 /* Ensure all headings use the same main text color */
