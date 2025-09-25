@@ -8,13 +8,13 @@
 
 :root {
     --bg-white: #ffffff;
-    --nav-light-blue: #d6e5f1;
+    --nav-light-blue: #eaf7ec; /* very light green (nav) */
     --btn-blue: #2b6cb0;
     --btn-blue-hover: #245a96;
     --text-on-blue: #ffffff;
     --link-blue: #1f67a8;
-    --hero-light-blue: #f8fcff;
-    --text-main: #222222;
+    --hero-light-blue: #f6fbf7; /* lighter hero green */
+    --text-main: #4a2f1b; /* darker brown */
 }
 
 @font-face {
@@ -55,7 +55,7 @@ body {
 .nav-btn {
     background-color: transparent;
     border: none;
-    color: #222222;
+    color: var(--text-main);
     font-size: 1.05rem;
     font-weight: 400;
     font-family: 'NeueStd', sans-serif;
