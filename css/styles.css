@@ -15,6 +15,8 @@
     --link-blue: #1f67a8;
     --hero-light-blue: #f6fbf7; /* lighter hero green */
     --text-main: #4a2f1b; /* darker brown */
+    --btn-green: #8fbf96; /* darker green */
+    --btn-green-hover: #7bb884;
 }
 
 @font-face {
@@ -161,8 +163,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Back button */
 .back-btn {
-    background-color: var(--btn-blue);
-    color: var(--text-on-blue);
+    background-color: var(--btn-green);
+    color: var(--text-main);
     border: none;
     padding: 0.8rem 1.5rem;
     border-radius: 25px;
@@ -174,24 +176,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-btn:hover {
-    background-color: var(--btn-blue-hover);
+    background-color: var(--btn-green-hover);
     transform: translateY(-2px);
 }
 
 /* Link styling for consistency */
 .incinerator-link, .section-text a {
-    color: var(--link-blue);
+    color: var(--btn-green);
     text-decoration: underline;
     cursor: pointer;
     transition: color 0.18s ease;
 }
 
 .incinerator-link:hover, .section-text a:hover {
-    color: var(--btn-blue-hover);
+    color: var(--btn-green-hover);
 }
 
 .incinerator-link:visited, .section-text a:visited {
-    color: var(--text-main);
+    color: var(--btn-green-hover);
 }
 
 .nav-social {
