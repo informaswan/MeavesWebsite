@@ -60,7 +60,7 @@ body {
     color: var(--text-main);
     font-size: 1.05rem;
     font-weight: 400;
-    font-family: 'NeueStd', sans-serif;
+    font-family: 'Belleza', sans-serif;
     cursor: pointer;
     padding: 0.5rem 1rem;
     border-radius: 25px;
@@ -81,11 +81,11 @@ body {
     font-size: 2rem;
     font-weight: bold;
     letter-spacing: 1px;
-    font-family: 'NeueStd', sans-serif;
+    font-family: 'Belleza', sans-serif;
 }
 
 .author-like {
-    font-family: 'NeueStd', sans-serif;
+    font-family: 'Belleza', sans-serif;
     color: var(--text-main);
     font-weight: 400;
     text-align: center;
@@ -141,7 +141,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .story-hero-image {
     /* Responsive, locked aspect ratio for hero images */
-    max-width: 700px;
+    max-width: 800px;
     width: 100%;
     aspect-ratio: 4 / 3;
     height: auto;
@@ -155,7 +155,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Image container with overlay text for beauty page */
 .story-hero-image-container {
     position: relative;
-    max-width: 480px;
+    max-width: 800px;
     width: 100%;
     margin: 2rem auto 3rem auto;
     display: block;
@@ -176,7 +176,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
     text-align: center;
-    font-family: 'NeueStd', sans-serif;
+    font-family: 'Belleza', sans-serif;
     z-index: 10;
 }
 
@@ -193,6 +193,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .story-title {
+    padding-top: 3%;
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
@@ -286,6 +287,16 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+@media (max-width: 768px) {
+  .hero-section {
+    margin: 1rem;
+    height: 60vh;               /* a bit shorter on mobile */
+    background-position: top center; /* ← keep the top visible on narrow screens */
+    background-size: cover;
+    border-radius: 12px;
+  }
+}
 /* Ensure hero text is above the leaf overlay */
 .hero-section::after {
     content: '';
@@ -314,7 +325,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-main);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.12);
     animation: fadeInUp 1s ease-out;
-    font-family: 'NeueStd', sans-serif;
+    font-family: 'Belleza', sans-serif;
 }
 
 .hero-subtitle {
@@ -360,7 +371,7 @@ h1, h2, h3, h4, h5, h6,
 .author-name,
 .author-like {
     color: var(--text-main) !important;
-    font-family: 'NeueStd', sans-serif !important;
+    font-family: 'Belleza', sans-serif !important;
     font-weight: 400 !important;
 }
 
@@ -663,3 +674,70 @@ aspect-ratio:4/3;
     display: block;
     box-sizing: border-box;
 }
+
+/* place hamburger beside title on desktop but hide it by default */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text-main);
+  padding: 0.25rem 0.5rem;
+}
+
+/* mobile layout */
+@media (max-width: 768px) {
+  .navbar {
+    /* keep title & hamburger on the same row */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .hamburger {
+    display: block;
+    order: 2; /* ensures it sits next to the title before the menu */
+  }
+
+  /* hide the menu by default on mobile; it will become a stacked panel */
+  .nav-right {
+    display: none; /* hidden until .show is toggled */
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    top: calc(100% + 8px);
+    background: var(--nav-light-blue);
+    flex-direction: column;
+    padding: 0.75rem;
+    border-radius: 12px;
+    gap: 0.5rem;
+    z-index: 999;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+
+  /* show class makes it visible */
+  .nav-right.show {
+    display: flex;
+  }
+
+  /* full width touch targets */
+  .nav-right .nav-btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.7rem 1rem;
+  }
+
+  .nav-right .nav-social {
+    align-self: center;
+  }
+}
+
+/* ensure desktop keeps original layout (in case you modified navbar earlier) */
+@media (min-width: 769px) {
+  .navbar { display:flex; align-items:center; justify-content:space-between; }
+}
+

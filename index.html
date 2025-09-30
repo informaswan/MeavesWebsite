@@ -13,6 +13,8 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="author-name">Maeve Reilly</div>
+  <!-- Hamburger — placed next to the title -->
+        <button class="hamburger" id="hamburgerBtn">&#9776;</button>
         <div class="nav-right">
             <button class="nav-btn active" id="homeBtn" onclick="showPage('home')">Home</button>
             <button class="nav-btn" id="portfolioBtn" onclick="showPage('portfolio')">Writing</button>
@@ -517,6 +519,59 @@
                 observer.observe(el);
             });
         });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navMenu = document.getElementById('navMenu');
+
+  if (!hamburgerBtn || !navMenu) {
+    // elements missing — fail silently
+    return;
+  }
+
+  hamburgerBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    navMenu.classList.toggle('show');
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', String(!expanded));
+  });
+
+  // close menu when clicking outside
+  document.addEventListener('click', function (e) {
+    if (!navMenu.contains(e.target) && !hamburgerBtn.contains(e.target) && navMenu.classList.contains('show')) {
+      navMenu.classList.remove('show');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // close menu after tapping a link/button inside it
+  navMenu.querySelectorAll('.nav-btn, .nav-social').forEach(el => {
+    el.addEventListener('click', function () {
+      if (navMenu.classList.contains('show')) {
+        navMenu.classList.remove('show');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  // If the user resizes to desktop, ensure mobile menu is removed
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 768 && navMenu.classList.contains('show')) {
+      navMenu.classList.remove('show');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+});
+document.addEventListener("DOMContentLoaded", function() {
+  const hamburgerBtn = document.getElementById("hamburgerBtn");
+  const navMenu = document.getElementById("navMenu");
+
+  if (hamburgerBtn && navMenu) {
+    hamburgerBtn.addEventListener("click", function() {
+      navMenu.classList.toggle("show");
+    });
+  }
+});
     </script>
 </body>
 </html>
