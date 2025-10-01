@@ -12,10 +12,11 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar">
+    <div class="nav-left">
         <div class="author-name">Maeve Reilly</div>
-  <!-- Hamburger — placed next to the title -->
         <button class="hamburger" id="hamburgerBtn">&#9776;</button>
-        <div class="nav-right">
+    </div>
+        <div class="nav-right" id="navMenu">
             <button class="nav-btn active" id="homeBtn" onclick="showPage('home')">Home</button>
             <button class="nav-btn" id="portfolioBtn" onclick="showPage('portfolio')">Writing</button>
             <button class="nav-btn" id="galleryBtn" onclick="showPage('gallery')">Gallery</button>
@@ -561,16 +562,6 @@ document.addEventListener('DOMContentLoaded', function () {
       hamburgerBtn.setAttribute('aria-expanded', 'false');
     }
   });
-});
-document.addEventListener("DOMContentLoaded", function() {
-  const hamburgerBtn = document.getElementById("hamburgerBtn");
-  const navMenu = document.getElementById("navMenu");
-
-  if (hamburgerBtn && navMenu) {
-    hamburgerBtn.addEventListener("click", function() {
-      navMenu.classList.toggle("show");
-    });
-  }
 });
     </script>
 </body>
