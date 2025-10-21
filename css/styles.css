@@ -589,6 +589,43 @@ h6,
   }
 }
 
+/* Anniversary Section */
+.anniversary-section {
+  padding: 1rem 1rem;
+  background-color: transparent;
+  margin-top: 1rem;
+}
+
+.anniversary-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: transparent;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.anniversary-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.anniversary-caption {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  font-style: italic;
+  max-width: 700px;
+  margin: 0 auto;
+}
 /* Gallery styles */
 .gallery-grid {
   display: grid;
