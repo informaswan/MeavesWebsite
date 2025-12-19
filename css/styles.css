@@ -222,13 +222,14 @@ h6 {
   text-align: justify;
 }
 
-.story-content p {
-  margin-bottom: 1.5rem;
+/* Center the story content block on the page but keep text left-aligned for readability */
+#ludditePage .story-content {
+  text-align: left; /* keep words lining up on the left */
+  max-width: 720px; /* narrower measure for better readability */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Back button */
-.back-btn {
-  background-color: var(--btn-green);
   color: var(--text-main);
   border: none;
   padding: 0.8rem 1.5rem;
