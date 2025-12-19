@@ -222,12 +222,28 @@ h6 {
   text-align: justify;
 }
 
-/* Center the story content block on the page but keep text left-aligned for readability */
+/* Center the story content block and its container on the page but keep text left-aligned */
+#ludditePage .story-main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center children horizontally */
+}
 #ludditePage .story-content {
   text-align: left; /* keep words lining up on the left */
-  max-width: 720px; /* narrower measure for better readability */
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 720px; /* fixed measure for consistent line breaks */
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0; /* margins handled by parent flex centering */
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media (max-width: 768px) {
+  #ludditePage .story-content {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
   color: var(--text-main);
