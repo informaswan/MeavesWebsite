@@ -228,6 +228,10 @@ h6 {
   flex-direction: column;
   align-items: center; /* center children horizontally */
 }
+#ludditePage .back-btn {
+  align-self: flex-start; /* place the back button on the left */
+  margin-left: 0;
+}
 #ludditePage .story-content {
   text-align: left; /* keep words lining up on the left */
   max-width: 720px; /* fixed measure for consistent line breaks */
